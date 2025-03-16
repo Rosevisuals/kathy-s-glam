@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navbar Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navUl = document.querySelector('nav ul');
-    menuToggle.addEventListener('click', () => navUl.classList.toggle('active'));
+    if (menuToggle && navUl) {
+        menuToggle.addEventListener('click', () => navUl.classList.toggle('active'));
+    } else {
+        console.error('Menu toggle or nav ul not found');
+    }
 
     // Form Elements
     const form = document.getElementById('booking-form');
@@ -22,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const notification = document.getElementById('booking-notification');
 
     let currentStep = 1;
+
+    // Debugging: Log if critical elements are missing
+    if (!form || steps.length === 0 || progressSteps.length === 0) {
+        console.error('Form or steps not found:', { form, steps, progressSteps });
+        return;
+    }
 
     // Text Reveal Animation Order
     document.querySelectorAll('.text-reveal').forEach((span, index) => {
@@ -42,18 +52,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Show/Hide Service or Class Options
-    typeSelect.addEventListener('change', () => {
-        const value = typeSelect.value;
-        serviceOptions.style.display = value === 'service' ? 'block' : 'none';
-        classOptions.style.display = value === 'class' ? 'block' : 'none';
-        preview.style.opacity = '0';
-        setTimeout(() => {
-            preview.textContent = value === 'service' ? 
-                'Choose your makeup service above.' : 
-                value === 'class' ? 'Select your class type.' : '';
-            preview.style.opacity = '1';
-        }, 300);
-    });
+    if (typeSelect) {
+        typeSelect.addEventListener('change', () => {
+            const value = typeSelect.value;
+            serviceOptions.style.display = value === 'service' ? 'block' : 'none';
+            classOptions.style.display = value === 'class' ? 'block' : 'none';
+            preview.style.opacity = '0';
+            setTimeout(() => {
+                preview.textContent = value === 'service' ? 
+                    'Choose your makeup service above.' : 
+                    value === 'class' ? 'Select your class type.' : '';
+                preview.style.opacity = '1';
+            }, 300);
+        });
+    } else {
+        console.error('typeSelect not found');
+    }
 
     // Navigation Between Steps
     nextButtons.forEach(button => {
@@ -75,30 +89,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Form Submission
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        if (validateStep(currentStep)) {
-            const formData = new FormData(form);
-            const bookingDetails = `
-                Booking Type: ${formData.get('type')}<br>
-                ${formData.get('type') === 'service' ? 'Service: ' + formData.get('service') : 'Class: ' + formData.get('class')}<br>
-                Date: ${formData.get('date')}<br>
-                Time: ${formData.get('time')}<br>
-                Name: ${formData.get('name')}<br>
-                Email: ${formData.get('email')}<br>
-                Phone: ${formData.get('phone')}<br>
-                Notes: ${formData.get('notes') || 'None'}
-            `;
-            notification.innerHTML = `Booking Confirmed!<br><br>${bookingDetails}`;
-            modal.classList.add('active');
-            form.reset();
-            currentStep = 1;
-            updateForm();
-        }
-    });
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            if (validateStep(currentStep)) {
+                const formData = new FormData(form);
+                const bookingDetails = `
+                    Booking Type: ${formData.get('type')}<br>
+                    ${formData.get('type') === 'service' ? 'Service: ' + formData.get('service') : 'Class: ' + formData.get('class')}<br>
+                    Date: ${formData.get('date')}<br>
+                    Time: ${formData.get('time')}<br>
+                    Name: ${formData.get('name')}<br>
+                    Email: ${formData.get('email')}<br>
+                    Phone: ${formData.get('phone')}<br>
+                    Notes: ${formData.get('notes') || 'None'}
+                `;
+                notification.innerHTML = `Booking Confirmed!<br><br>${bookingDetails}`;
+                modal.classList.add('active');
+                form.reset();
+                currentStep = 1;
+                updateForm();
+            }
+        });
+    } else {
+        console.error('Form not found');
+    }
 
     // Close Modal
-    closeModal.addEventListener('click', () => modal.classList.remove('active'));
+    if (closeModal) {
+        closeModal.addEventListener('click', () => modal.classList.remove('active'));
+    } else {
+        console.error('closeModal not found');
+    }
 
     // Update Form Display
     function updateForm() {
@@ -112,19 +134,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Validate Current Step
     function validateStep(step) {
+        if (!steps[step - 1]) {
+            console.error(`Step ${step} not found`);
+            return false;
+        }
         const inputs = steps[step - 1].querySelectorAll('input[required], select[required]');
         let valid = true;
         inputs.forEach(input => {
             if (!input.value) {
-                input.style.borderColor = '#e74c3c';
+                input.style.borderColor = '#e74c3c'; // Error color (red)
                 valid = false;
             } else {
-                input.style.borderColor = var(--accent-color);
+                input.style.borderColor = '#f2d4e6'; // Accent color (light pink, previously var(--accent-color))
             }
         });
-        if (step === 1 && typeSelect.value && !steps[0].querySelector(`#${typeSelect.value}`).value) {
-            steps[0].querySelector(`#${typeSelect.value}`).style.borderColor = '#e74c3c';
-            valid = false;
+        if (step === 1 && typeSelect && typeSelect.value) {
+            const selectedInput = steps[0].querySelector(`#${typeSelect.value}`);
+            if (selectedInput && !selectedInput.value) {
+                selectedInput.style.borderColor = '#e74c3c'; // Error color (red)
+                valid = false;
+            }
         }
         return valid;
     }
