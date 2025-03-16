@@ -1,0 +1,277 @@
+/* services.css - Styling for Services Page */
+:root {
+    --primary-color: #d4a9bf; /* Pink shade */
+    --secondary-color: #8c5d7d; /* Deeper purple-pink */
+    --accent-color: #f2d4e6; /* Light pink */
+    --text-color: #333;
+    --light-color: #fff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--light-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav.scrolled { padding: 15px 5%; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15); }
+
+.logo {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--secondary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 30px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: var(--transition);
+}
+
+nav ul li a:hover::after { width: 100%; }
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+/* Services Section */
+.section {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, #f9f3f7 70%, var(--accent-color) 100%);
+    margin-top: 70px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--text-color);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards 0.2s;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.service-card.visible { opacity: 1; transform: translateY(0); }
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: var(--transition);
+}
+
+.service-icon i {
+    font-size: 30px;
+    color: var(--secondary-color);
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 60px 5% 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+}
+
+.footer-links h4, .footer-newsletter h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul { list-style: none; }
+
+.footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover { color: var(--light-color); padding-left: 5px; }
+
+.newsletter-form { display: flex; gap: 10px; }
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    font-family: 'Lora', serif;
+}
+
+.btn-small {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-small:hover { background-color: var(--light-color); color: var(--secondary-color); }
+
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav { flex-wrap: wrap; padding: 15px 5%; }
+    nav ul { display: none; flex-direction: column; width: 100%; text-align: center; }
+    nav ul.active { display: flex; }
+    nav ul li { margin: 10px 0; }
+    .menu-toggle { display: block; }
+    .section-title { font-size: 32px; }
+    .section-subtitle { font-size: 16px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .section-title { font-size: 28px; }
+    .service-card { padding: 20px; }
+    .service-icon { width: 60px; height: 60px; }
+    .service-icon i { font-size: 24px; }
+    .footer-logo h3 { font-size: 24px; }
+    .footer-links h4, .footer-newsletter h4 { font-size: 18px; }
+}
