@@ -5,6 +5,7 @@
     --accent-color: #f2d4e6; /* Light pink */
     --text-color: #333;
     --light-color: #fff;
+    --gray-color: #f8f8f8;
     --transition: all 0.3s ease;
 }
 
@@ -18,7 +19,7 @@ body {
     font-family: 'Lora', serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #f9f3f7;
+    background-color: var(--gray-color);
     overflow-x: hidden;
 }
 
@@ -55,12 +56,22 @@ nav ul li a {
     color: var(--text-color);
     font-weight: 400;
     font-size: clamp(14px, 2.5vw, 16px);
+    position: relative;
     transition: var(--transition);
 }
 
-nav ul li a:hover {
-    color: var(--secondary-color);
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
 }
+
+nav ul li a:hover::after { width: 100%; }
 
 .menu-toggle {
     display: none;
@@ -73,7 +84,7 @@ nav ul li a:hover {
 .booking {
     padding: clamp(80px, 15vw, 120px) 5% clamp(40px, 8vw, 60px);
     min-height: 100vh;
-    background: linear-gradient(135deg, #f9f3f7 70%, var(--accent-color) 100%);
+    background: linear-gradient(135deg, var(--gray-color) 70%, var(--accent-color) 100%);
 }
 
 .booking h1 {
@@ -89,10 +100,10 @@ nav ul li a:hover {
 }
 
 .booking h1 .text-reveal {
-    display: inline-block;
     opacity: 0;
     transform: translateY(20px);
     animation: revealText 0.8s ease forwards;
+    animation-delay: calc(0.2s * var(--order));
 }
 
 /* Progress Bar */
@@ -114,12 +125,13 @@ nav ul li a:hover {
     font-weight: 600;
     font-size: clamp(12px, 2vw, 16px);
     transition: var(--transition);
+    cursor: default;
 }
 
 .progress-bar .step.active {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--light-color);
-    border-color: var(--secondary-color);
+    border-color: var(--primary-color);
 }
 
 /* Form */
@@ -131,14 +143,16 @@ nav ul li a:hover {
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
+    animation: fadeIn 0.8s ease forwards 0.5s;
 }
 
 .form-step {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: clamp(15px, 3vw, 20px);
 }
+
+.form-step.active { display: flex; }
 
 .booking label {
     font-family: 'Lora', serif;
@@ -151,7 +165,7 @@ nav ul li a:hover {
 .booking input,
 .booking textarea {
     padding: clamp(10px, 2vw, 12px);
-    font-size: clamp(14px, 2.5vw, 16px);
+    font-size: clamp(14px, 2vw, 16px);
     border: 1px solid var(--accent-color);
     border-radius: 5px;
     font-family: 'Lora', serif;
@@ -208,13 +222,17 @@ nav ul li a:hover {
 .next-btn:hover,
 .prev-btn:hover,
 .submit-btn:hover {
-    background-color: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.next-btn:hover,
+.submit-btn:hover {
+    background-color: #a47d92; /* Slightly darker shade for hover */
+}
+
 .prev-btn {
-    background-color: var(--light-color);
+    background-color: transparent;
     color: var(--secondary-color);
     border: 2px solid var(--primary-color);
 }
@@ -258,6 +276,8 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
 }
+
+.modal.active { display: flex; }
 
 .modal-content {
     background: var(--light-color);
