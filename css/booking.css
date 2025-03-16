@@ -119,11 +119,11 @@ nav ul li a:hover::after { width: 100%; }
     background-color: var(--light-color);
     border: 2px solid var(--primary-color);
     color: var(--secondary-color);
-    padding: clamp(6px, 1.5vw, 8px) clamp(15px, 3vw, 20px);
+    padding: clamp(8px, 1.5vw, 10px) clamp(20px, 3vw, 30px);
     border-radius: 25px;
     font-family: 'Lora', serif;
     font-weight: 600;
-    font-size: clamp(12px, 2vw, 16px);
+    font-size: clamp(14px, 2vw, 16px);
     transition: var(--transition);
     cursor: default;
 }
@@ -339,7 +339,7 @@ nav ul li a:hover::after { width: 100%; }
 
 @media (max-width: 768px) {
     nav { flex-wrap: wrap; padding: clamp(10px, 2vw, 15px) 5%; }
-    nav ul { display: none; flex-direction: column; width: 100%; text-align: center; padding: 10px 0; }
+    nav ul { display: none; flex-direction: column; width: 100%; text-align: center; padding: 10px 0; background-color: var(--light-color); }
     nav ul.active { display: flex; }
     .menu-toggle { display: block; }
     .booking { padding: clamp(60px, 12vw, 100px) 5% clamp(30px, 6vw, 50px); }
@@ -351,7 +351,7 @@ nav ul li a:hover::after { width: 100%; }
 @media (max-width: 480px) {
     .logo { font-size: clamp(18px, 4vw, 24px); }
     .booking h1 { font-size: clamp(20px, 5vw, 28px); margin-bottom: 20px; }
-    .progress-bar .step { padding: clamp(5px, 1vw, 6px) clamp(10px, 2vw, 15px); font-size: clamp(10px, 2vw, 14px); }
+    .progress-bar .step { padding: clamp(5px, 1vw, 6px) clamp(10px, 2vw, 15px); font-size: clamp(12px, 2vw, 14px); }
     .animate-form { padding: 15px; }
     .booking label { font-size: clamp(12px, 2vw, 14px); }
     .booking select, .booking input, .booking textarea { padding: 8px; font-size: clamp(12px, 2vw, 14px); }
