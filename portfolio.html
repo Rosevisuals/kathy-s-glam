@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kathy's Glam Hub</title>
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">Kathy's Glam Hub</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="portfolio">
+        <h1>
+            <span class="text-reveal">Our</span>
+            <span class="text-reveal">Portfolio</span>
+        </h1>
+        <p class="intro-text">Explore Kathy's stunning makeup artistry and transformative classes, showcasing creativity and skill.</p>
+        <div class="filters">
+            <button data-filter="all" class="active"><span class="text-reveal">All</span></button>
+            <button data-filter="clients"><span class="text-reveal">Client Work</span></button>
+            <button data-filter="classes"><span class="text-reveal">Classes</span></button>
+        </div>
+        <h2 class="category-title">All Work</h2>
+        <div class="gallery">
+            <div class="item" data-category="clients">
+                <img src="https://img.freepik.com/premium-photo/makeup-artist-is-applying-finishing-touches-models-eye-makeup-model-is-looking-down-with-her-eyes-closed_1187703-114580.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Bridal Makeup">
+                <p>Bridal Glam</p>
+            </div>
+            <div class="item" data-category="clients">
+                <img src="https://img.freepik.com/free-photo/african-american-woman-applying-makeup-by-makeup-artist-beauty-saloon_627829-4582.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Event Makeup">
+                <p>Event Look</p>
+            </div>
+            <div class="item" data-category="classes">
+                <img src="https://img.freepik.com/premium-photo/makeup-teacher-with-her-student-girls-makeup-tutorial-lesson-beauty-school-makeup-master-class_104603-7921.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Makeup Class">
+                <p>Beginner Class</p>
+            </div>
+            <div class="item" data-category="classes">
+                <img src="https://img.freepik.com/free-photo/two-female-friends-doing-make-up-each-other_23-2148708984.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Advanced Class">
+                <p>Advanced Techniques</p>
+            </div>
+        </div>
+        <div class="item" data-category="clients">
+            <img src="https://img.freepik.com/premium-photo/makeup-friends-portrait-with-ring-light-social-media-eyeshadow-tutorial-smile-young-people-women-beauty-with-internet-app-happy-from-influencer-cosmetics-vlog-home_590464-204712.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Bridal Makeup">
+            <div class="overlay">
+                <p>Bridal Glam - Wedding 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

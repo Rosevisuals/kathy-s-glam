@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kathy's Glam Hub - Professional Makeup Artistry</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/animation.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    </head>
+<body>
+    <div class="page-loader">
+        <div class="loader-content"></div>
+    </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Kathy's Glam Hub</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="booking.html" class="btn-nav">Book Now</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Makeup Artistry & Beauty Classes</h1>
+            <p>Transform your look with professional makeup services and learn the art of beauty with our expert classes</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">Book Appointment</a>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+            <p class="section-subtitle" data-aos="fade-up">Professional makeup services tailored to your needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Bridal Makeup</h3>
+                    <p>Look your absolute best on your special day with our custom bridal makeup packages.</p>
+                    <a href="booking.html" class="btn-small">Book Now</a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Special Events</h3>
+                    <p>Perfect for parties, photoshoots, and special occasions. Stand out with professional makeup.</p>
+                    <a href="booking.html" class="btn-small">Book Now</a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Makeup Classes</h3>
+                    <p>Learn professional techniques in our beginner and advanced makeup classes.</p>
+                    <a href="booking.html" class="btn-small">Book Now</a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Sessions</h3>
+                    <p>Perfect for bridal parties or friends who want to learn makeup techniques together.</p>
+                    <a href="booking.html" class="btn-small">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Portfolio</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Explore our stunning work and transformations</p>
+            
+            <div class="gallery-filters" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="bridal">Bridal</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="classes">Classes</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="bridal" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://img.freepik.com/premium-photo/makeup-artist-is-applying-finishing-touches-models-eye-makeup-model-is-looking-down-with-her-eyes-closed_1187703-114580.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Bridal Makeup">
+                    <div class="gallery-overlay">
+                        <h4>Elegant Bridal Look</h4>
+                        <p>Natural glam for the perfect bride</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="events" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://img.freepik.com/free-photo/african-american-woman-applying-makeup-by-makeup-artist-beauty-saloon_627829-4582.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Event Makeup">
+                    <div class="gallery-overlay">
+                        <h4>Evening Glam</h4>
+                        <p>Bold makeup for special events</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="classes" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://img.freepik.com/premium-photo/makeup-teacher-with-her-student-girls-makeup-tutorial-lesson-beauty-school-makeup-master-class_104603-7921.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Makeup Class">
+                    <div class="gallery-overlay">
+                        <h4>Masterclass Session</h4>
+                        <p>Learning professional techniques</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="bridal" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://img.freepik.com/premium-photo/beautiful-woman-applying-rough-cheek-with-cosmetic-brush_926199-3064451.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Bridal Makeup">
+                    <div class="gallery-overlay">
+                        <h4>Classic Bridal</h4>
+                        <p>Timeless look for your special day</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="events" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="https://img.freepik.com/free-photo/portrait-woman-applying-make-up-with-make-up-brush_23-2149206648.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Event Makeup">
+                    <div class="gallery-overlay">
+                        <h4>Red Carpet Ready</h4>
+                        <p>Glamorous makeup for important nights</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="classes">
+                    <img src="https://img.freepik.com/premium-photo/woman-applying-makeup-her-friends_53876-10560.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Makeup Class">
+                    <div class="gallery-overlay">
+                        <h4>Group Workshop</h4>
+                        <p>Learning together with friends</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-cta">
+                <a href="portfolio.html" class="btn btn-secondary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://img.freepik.com/premium-photo/portrait-young-woman-with-curly-hair_1048944-21663828.jpg?uid=R89440838&ga=GA1.1.1913467960.1739459214&semt=ais_hybrid" alt="Kathy - Makeup Artist">
+                </div>
+                <div class="about-content">
+                    <div class="about-content">
+                        <h2 class="section-title">About Kathy's Glam Hub</h2>
+                        <p class="lead">Your One-Stop Destination for Makeup Excellence</p>
+                        <p>Kathy's Glam Hub is where beauty meets expertise, offering top-tier makeup services and training for brides, youths, and beauty enthusiasts alike.</p>
+                        <p>Specializing in bridal and event makeup, we create stunning looks that enhance your natural beauty—perfect for your big day or any special occasion. Our hub also provides professional makeup classes, empowering you with the skills to shine on your own terms.</p>
+                        <p>With a passion for perfection and a commitment to quality, Kathy's Glam Hub is your go-to place to look and feel your best, no matter the occasion.</p>
+                    </div>
+                    <div class="about-credentials">
+                        <div class="credential">
+                            <h4>10+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="credential">
+                            <h4>500+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="credential">
+                            <h4>50+</h4>
+                            <p>Bridal Events</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Kathy did my bridal makeup and I couldn't have been happier! She understood exactly what I wanted and made me feel beautiful and confident."</p>
+                        <div class="testimonial-author">
+                            <h4>Sarah M.</h4>
+                            <p>Bridal Client</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"I learned so much from Kathy's makeup class! She breaks down techniques in a way that's easy to understand and practice at home."</p>
+                        <div class="testimonial-author">
+                            <h4>Jennifer L.</h4>
+                            <p>Class Participant</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Kathy has done my makeup for several special events, and each time she creates something that makes me feel amazing. Highly recommend!"</p>
+                        <div class="testimonial-author">
+                            <h4>Michelle T.</h4>
+                            <p>Regular Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <p class="section-subtitle">Ready to get glammed up or learn new makeup skills? Book your session now!</p>
+            
+            <div class="booking-grid">
+                <div class="booking-info">
+                    <h3>How It Works</h3>
+                    <ul class="booking-steps">
+                        <li>
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Choose Your Service</h4>
+                                <p>Select from our range of makeup services or classes</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Pick a Date & Time</h4>
+                                <p>Select from available slots in our calendar</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Consultation Call</h4>
+                                <p>We'll discuss your preferences and requirements</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <h4>Get Glammed Up!</h4>
+                                <p>Enjoy your professional makeup service</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="booking-form">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Type</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="bridal">Bridal Makeup</option>
+                                <option value="event">Special Event Makeup</option>
+                                <option value="class-basic">Basic Makeup Class</option>
+                                <option value="class-advanced">Advanced Makeup Class</option>
+                                <option value="group">Group Session</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">Preferred Time</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select a Time</option>
+                                <option value="morning">Morning (9am - 12pm)</option>
+                                <option value="afternoon">Afternoon (1pm - 4pm)</option>
+                                <option value="evening">Evening (5pm - 8pm)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p>Have questions? We're here to help!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>(123) 456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>info@kathysglamhub.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Pioneer Mall, Kampala, Uganda</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8160331175095!2d32.59111161475449!3d0.31411269999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbb2f6b34e2b%3A0x9c3e7f7b0e6c9e0e!2sPioneer%20Mall!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Kathy's Glam Hub</h3>
+                    <p>Professional Makeup Artistry & Classes</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Get makeup tips, exclusive offers, and updates</p>
+                    <form action="#" method="post" class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn-small">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kathy's Glam Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true,
+            offset: 50
+        });
+        
+        // Hide loader when page is loaded
+        window.addEventListener('load', function() {
+            document.querySelector('.page-loader').classList.add('loader-hidden');
+            setTimeout(function() {
+                document.querySelector('.page-loader').style.display = 'none';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

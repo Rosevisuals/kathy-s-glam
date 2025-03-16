@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Kathy's Glam Hub</title>
+    <link rel="stylesheet" href="css/booking.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">Kathy's Glam Hub</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="booking">
+        <h1>
+            <span class="text-reveal">Book</span>
+            <span class="text-reveal">Your</span>
+            <span class="text-reveal">Experience</span>
+        </h1>
+        <div class="progress-bar">
+            <div class="step active" data-step="1">1. Select Type</div>
+            <div class="step" data-step="2">2. Date & Time</div>
+            <div class="step" data-step="3">3. Your Details</div>
+        </div>
+        <form id="booking-form" class="animate-form">
+            <div class="form-step" data-step="1">
+                <label for="type">What are you booking?</label>
+                <select id="type" name="type" required>
+                    <option value="">-- Select Type --</option>
+                    <option value="service">Makeup Service</option>
+                    <option value="class">Makeup Class</option>
+                </select>
+                <div id="service-options" style="display: none;">
+                    <label for="service">Select Service:</label>
+                    <select id="service" name="service">
+                        <option value="">-- Choose a Service --</option>
+                        <option value="bridal">Bridal Makeup ($150)</option>
+                        <option value="event">Event Makeup ($75)</option>
+                        <option value="photoshoot">Photoshoot Makeup ($100)</option>
+                    </select>
+                </div>
+                <div id="class-options" style="display: none;">
+                    <label for="class">Select Class:</label>
+                    <select id="class" name="class">
+                        <option value="">-- Choose a Class --</option>
+                        <option value="beginner">Beginner Makeup Class ($50)</option>
+                        <option value="advanced">Advanced Techniques ($75)</option>
+                    </select>
+                </div>
+                <div id="preview" class="preview"></div>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            <div class="form-step" data-step="2" style="display: none;">
+                <label for="date">Pick a Date:</label>
+                <input type="date" id="date" name="date" required min="2025-03-16">
+                <label for="time">Pick a Time:</label>
+                <select id="time" name="time" required>
+                    <option value="">-- Select a Time --</option>
+                </select>
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            <div class="form-step" data-step="3" style="display: none;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="notes">Additional Notes:</label>
+                <textarea id="notes" name="notes" rows="4"></textarea>
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#" target="_blank">terms and conditions</a></label>
+                </div>
+                <button type="button" class="prev-btn">Back</button>
+                <button type="submit" class="submit-btn" id="submit-booking">Book Now</button>
+            </div>
+        </form>
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <p id="booking-notification"></p>
+                <button id="close-modal">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
